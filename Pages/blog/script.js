@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const spaceId = '6l77mp5tmezx';
-    const accessToken = 'aavG9jvena4o0QrpfxU_n9fZE6iz60O_jDqzOApi2Ds';
-    const contentType = 'BlogPost';  // Ensure this matches the Content Type ID
+    const spaceId = 'YOUR_SPACE_ID';
+    const accessToken = 'YOUR_ACCESS_TOKEN';
+    const contentType = 'blogPost';  // Make sure this matches your Content Type ID exactly
   
     const url = `https://cdn.contentful.com/spaces/${spaceId}/entries?access_token=${accessToken}&content_type=${contentType}`;
   
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const response = await fetch(url);
       const data = await response.json();
   
-      console.log('API Response:', data);  // Log the full response
+      console.log('API Response:', data);  // Log the full response to inspect
   
       if (!data.items) {
         throw new Error('No items found in the response');
