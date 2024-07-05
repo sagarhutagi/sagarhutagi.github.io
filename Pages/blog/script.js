@@ -9,16 +9,26 @@ document.addEventListener("DOMContentLoaded", async () => {
       const response = await fetch(url);
       const data = await response.json();
   
+      console.log('API Response:', data);  // Log the full response
+  
+      if (!data.items) {
+        throw new Error('No items found in the response');
+      }
+  
       const blogPosts = data.items;
       const blogPostsContainer = document.getElementById('blog-posts');
   
       blogPosts.forEach(post => {
-        const listItem = document.createElement('li');
-        const title = post.fields.title;
-        const content = post.fields.content;
+        if (post.fields) {
+          const listItem = document.createElement('li');
+          const title = post.fields.title || 'No Title';
+          const content = post.fields.content || 'No Content';
   
-        listItem.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
-        blogPostsContainer.appendChild(listItem);
+          listItem.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+          blogPostsContainer.appendChild(listItem);
+        } else {
+          console.warn('Post fields are missing:', post);
+        }
       });
     } catch (error) {
       console.error('Error fetching blog posts:', error);
