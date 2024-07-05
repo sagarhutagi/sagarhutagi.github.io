@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
     postElement.classList.add('blog-post'); // Optional: Add a CSS class for styling
 
     postElement.innerHTML = `
-      <h2>${post.title}</h2>
-      <p>${post.content}</p>
-      <p><em>By ${post.author} on ${post.date}</em></p>
+      <h2>${blogPosts.title}</h2>
+      <p>${blogPosts.content}</p>
+      <p><em>By ${blogPosts.author} on ${blogPosts.date}</em></p>
     `;
 
     blogPostsContainer.appendChild(postElement);
