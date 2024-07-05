@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const spaceId = '6l77mp5tmezx';
     const accessToken = 'aavG9jvena4o0QrpfxU_n9fZE6iz60O_jDqzOApi2Ds';
-    const contentType = 'blogPost';  // Ensure this matches the Content Type ID
+    const contentType = 'BlogPost';  // Ensure this matches the Content Type ID
   
     const url = `https://cdn.contentful.com/spaces/${spaceId}/entries?access_token=${accessToken}&content_type=${contentType}`;
   
